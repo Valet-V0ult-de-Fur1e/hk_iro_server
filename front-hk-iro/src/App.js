@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Creatable from "react-select";
 import { components } from "react-select";
-// import { Label } from 'semantic-ui-react';
 import './App.css';
 
 const entypedata = {
@@ -251,8 +250,8 @@ function App (){
   }
 
   const funalert = () =>{
-    if (selected_count > select_limit / 18 - 1) {
-      return <label>!часы за метапредметные задачи учитываться не будут!</label>
+    if (selected_count > select_limit / 18 - 1 && selected_count !== 0) {
+      return <label className='alertMessege'>!часы за метапредметные задачи учитываться не будут!</label>
     }
   }
 
@@ -300,10 +299,10 @@ function App (){
           <p>№ протокола</p>
           <input type="text" name="tp_protocol_number"/>
           <p>Дата заседания НМС, ПС</p>
-          <input type="text" name="tp_meeting_date_smc"/>
+          <input type="date" name="tp_meeting_date_smc"/>
           <p>Дата утвердения программы руководителем (в соответствии с приказом образовательной организации реализующей программу)</p>
-          <input type="text" name="tp_date_approval_program"/>
-          <p>Должность,фамилия, иннициалы руководителя образовательной организации</p>
+          <input type="date" name="tp_date_approval_program"/>
+          <p>Иннициалы руководителя образовательной организации</p>
           <input type="text" name="tp_surname_head_eo"/>
           <p>Дополнительная общеобразовательная общеразвивающая программа (укажите название)</p>
           <input type="text" name="tp_program_name"/>
@@ -425,7 +424,7 @@ function App (){
           <textarea name='cop_list_sourse'/>
         </div>
         <div className = "button">
-          <input type="submit" method="POST"/>
+          <input type="submit" id="hidden-button"/>
         </div>
       </form>
     </div>
