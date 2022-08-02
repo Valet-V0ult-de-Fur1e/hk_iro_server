@@ -400,7 +400,7 @@ def test():
     data_dict['en_orientation'] = dict_params[data_dict['en_orientation']]
     data_dict['en_type_activity'] = dict_params[data_dict['en_type_activity']]
     name = f"program {count}.docx"
-    doc1 = DocxTemplate("test.docx")
+    doc1 = DocxTemplate("1.docx")
     doc1.render(data_dict)
     doc1.save(name)
     count += 1
