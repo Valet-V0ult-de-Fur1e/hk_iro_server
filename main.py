@@ -381,6 +381,13 @@ def test():
         if data_dict["en_duration_lesson_choice"] == "3":
             data_dict["en_duration_lesson"] = "1"
             data_dict["en_number_classes"] = "1"
+    dop_dict = {
+        "tech": "Развитие технических способностей ",
+        "sci": "Формирование устойчивого интереса к исследовательской деятельности",
+        "art": "Развитие творческих способностей",
+        "adv": "Духовно-нравственное воспитание средствами туристско-краеведческой деятельности"
+    }
+    data_dict["en_program_objectives"] = dop_dict[data_dict["en_orientation"]]
     all_time = int(data_dict["en_training_periodn"]) * int(data_dict["en_duration_lesson"]) * int(data_dict["en_number_classes"]) // 18
     if len(data_dict['en_subject_taskss']):
         for item in data_dict['en_subject_taskss']:

@@ -300,8 +300,10 @@ function App (){
           <input type="date" name="tp_meeting_date_smc"/>
           <p>Дата утвердения программы руководителем (в соответствии с приказом образовательной организации реализующей программу)</p>
           <input type="date" name="tp_date_approval_program"/>
-          <p>Иннициалы руководителя образовательной организации</p>
+          <p>Фамилия, иннициалы руководителя образовательной организации</p>
           <input type="text" name="tp_surname_head_eo"/>
+          <p>Должность руководителя образовательной организации</p>
+          <input type="text" name="tp_eo_lvl"/>
           <p>Дополнительная общеобразовательная общеразвивающая программа (укажите название)</p>
           <input type="text" name="tp_program_name"/>
           <p>Программа имеет направленность </p>
@@ -313,6 +315,8 @@ function App (){
           </select><br/>
           <p>Адресат программы (возраст в границах  от 6 до 18 лет)</p>
           <input type="text" name="tp_addressee_program"/>
+          <p>Дополнительные требования к обучающемуся (необязательно к заполнению)</p>
+          <textarea name="tp_addressee_lvl"/>
           <p>Место реализации программы (город, поселок)</p>
           <input type="text" name="tp_implementation_place"/>
           <p>Год утверждения программы (программы утверждаются ежегодно перед началом реализации)</p>
@@ -345,10 +349,6 @@ function App (){
             Если новизны нет, не нужно ее выдумывать!
           </p>
           <textarea name="en_new_exp"/>
-          <p>
-            Цель программы
-          </p>
-          <textarea name="en_program_objectives"/>
           <p>Период обучения </p>
           <select type="text" name="en_training_periodn" value={param_limit_1} onChange={(event)=>{setParam_1_Limit(event.target.value)}}>
             <option value="0">0</option>
@@ -365,7 +365,7 @@ function App (){
             isMulti
             options={en_form_data}
           />
-          <p>Задачи предметные</p>
+          <p>Задачи предметные (каждая задача выдаёт содержательный модуль, расчитанный на 18 часов)</p>
           <Creatable
             value={select_list1}
             components={{ Menu }}
