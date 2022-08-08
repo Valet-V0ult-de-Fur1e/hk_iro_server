@@ -80,8 +80,36 @@ const entypedata = {
       value: "schooldanger"
     }
   ],
+  "sport" : [
+    {
+      label: "вольная борьба",
+      value: "вольная борьба"
+    },
+    {
+      label: "баскетбол",
+      value: "баскетбол"
+    },
+    {
+      label: "лёгкая отлетика",
+      value: "лёгкая отлетика"
+    },
+    {
+      label: "киокушинкай",
+      value: "киокушинкай"
+    }
+  ],
+  "soc" : [
+        {
+      label: "Финансоваая грамотность",
+      value: "Финансоваая грамотность"
+    },
+    {
+      label: "Журналистика",
+      value: "Журналистика"
+    }
+  ],
   "" : [
-  ]
+  ],
 }
 
 const en_form_data = [
@@ -291,14 +319,14 @@ function App (){
           <input type="text" name="tp_shortname_eo"/>
           <p>Рассмотрено на </p>
           <select type="text" name="tp_expert_advisory_org">
-            <option value="НМС">НМС</option>
-            <option value="ПС">ПС</option>
+            <option value="НМС">НМС (Научно-методический совет)</option>
+            <option value="ПС">ПС (педагогический совет)</option>
           </select>
           <p>№ протокола</p>
           <input type="text" name="tp_protocol_number"/>
           <p>Дата заседания НМС, ПС</p>
           <input type="date" name="tp_meeting_date_smc"/>
-          <p>Дата утвердения программы руководителем (в соответствии с приказом образовательной организации реализующей программу)</p>
+          <p>Дата утверждения программы руководителем (в соответствии с приказом образовательной организации реализующей программу)</p>
           <input type="date" name="tp_date_approval_program"/>
           <p>Фамилия, иннициалы руководителя образовательной организации</p>
           <input type="text" name="tp_surname_head_eo"/>
@@ -312,6 +340,8 @@ function App (){
             <option value="sci">Естественнонаучная</option>
             <option value="art">Художественная</option>
             <option value="adv">Туристско-краеведческая</option>
+            <option value="sport">Физкультурно-спортивный</option>
+            <option value="soc">Социально-гуманитарное</option>
           </select><br/>
           <p>Адресат программы (возраст в границах  от 6 до 18 лет)</p>
           <input type="text" name="tp_addressee_program"/>
@@ -337,8 +367,8 @@ function App (){
           </select>
           <p>
             Актуальность  — это ответ на вопрос, зачем современным детям в современных условиях нужна конкретная программа (своевременность, современность). Актуальность отражает:
-             актуальность для общества (как ребёнок с приобретёнными компетенциями будет востребован в современном обществе),
-             актуальность для ребёнка (что ребёнок приобретет и как изменится).
+            1. актуальность для общества (как ребёнок с приобретёнными компетенциями будет востребован в современном обществе),
+            2. актуальность для ребёнка (что ребёнок приобретет и как изменится).
             (не более 1000 знаков)
           </p>
           <textarea name="en_relevance"/>
@@ -420,6 +450,7 @@ function App (){
           <textarea name='cop_materials_edu'/>
           <p>СПИСОК ИСТОЧНИКОВ</p>
           <textarea name='cop_list_sourse'/>
+          <label className='alertMessege'>!Выдаваемый файл требует проверки и редактирования!</label>
         </div>
         <div className = "button">
           <input type="submit" id="hidden-button"/>
