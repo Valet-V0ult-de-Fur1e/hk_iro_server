@@ -389,20 +389,21 @@ def test():
     }
     data_dict["en_program_objectives"] = dop_dict[data_dict["en_orientation"]]
     all_time = int(data_dict["en_training_periodn"]) * int(data_dict["en_duration_lesson"]) * int(data_dict["en_number_classes"]) // 18
-    if len(data_dict['en_subject_taskss']):
+    if len(data_dict['en_subject_taskss']) > 0:
         for item in data_dict['en_subject_taskss']:
             modules_dict.append({"name": item, "time": time_limit_dict[item]})
             subj_data_dict.append(quest_data_dict[item])
             data_dict["cop_meta_result"].append(result_dict[item])
-    if len(data_dict['en_metasubject_tasks']):
+    if len(data_dict['en_metasubject_tasks']) > 0:
         for item in data_dict['en_metasubject_tasks']:
             if all_time < len(data_dict['en_subject_taskss']) - 1:
                 modules_dict.append({"name": item, "time": time_limit_dict[item]})
             subj_data_dict.append(quest_data_dict[item])
             data_dict["cop_sub_result"].append(result_dict[item])
-    if len(data_dict['en_metasubject_tasks_no']):
+    if len(data_dict['en_metasubject_tasks_no']) > 0:
         for item in data_dict['en_metasubject_tasks_no']:
-            data_dict["cop_sub_result"].append(result_dict[item])
+            if item in result_dict.keys():
+                data_dict["cop_sub_result"].append(result_dict[item])
     data_dict['modules'] = modules_dict
     data_dict['plan_list'] = subj_data_dict
     data_dict['en_orientation'] = dict_params[data_dict['en_orientation']]
