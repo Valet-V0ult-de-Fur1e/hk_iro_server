@@ -25,6 +25,10 @@ select {
   font-size: 20px;
 }
 
+h5 {
+  color: #4d4d4d;
+}
+
 option {
   font-size: 20px;
 }
