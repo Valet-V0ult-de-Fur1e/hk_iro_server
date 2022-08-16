@@ -424,7 +424,7 @@ def test():
             data_dict["cop_meta_result"] += result_dict[item]
     if len(data_dict['en_metasubject_tasks']) > 0:
         for item in data_dict['en_metasubject_tasks']:
-            if all_time < len(data_dict['en_subject_taskss']) - 1:
+            if all_time >= len(data_dict['en_subject_taskss']) + 1:
                 modules_dict.append({"name": item, "time": time_limit_dict[item]})
             subj_data_dict.append(quest_data_dict[item])
             data_dict["cop_sub_result"] += result_dict[item]
