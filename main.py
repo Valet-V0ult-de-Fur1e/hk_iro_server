@@ -37,6 +37,7 @@ def test():
         "sci": "Естественнонаучная",
         "art": "Художественная",
         "adv": "Туристско-краеведческая",
+        "sport": "Физкультурно-спортивный",
         "baseadv": "Основы туризма",
         "lendadv": "Краеведение",
         "schooldanger": "школа безопасности",
@@ -886,7 +887,8 @@ def test():
         "tech": "Развитие технических способностей ",
         "sci": "Формирование устойчивого интереса к исследовательской деятельности",
         "art": "Развитие творческих способностей",
-        "adv": "Духовно-нравственное воспитание средствами туристско-краеведческой деятельности"
+        "adv": "Духовно-нравственное воспитание средствами туристско-краеведческой деятельности",
+        'sport': 'Развитие физичских показателей и улучшение спортивных результатов'
     }
     data_dict['cop_meta_result'] = ''
     data_dict['cop_sub_result'] = ''
@@ -915,7 +917,7 @@ def test():
     data_dict['modules'] = modules_dict
     data_dict['plan_list'] = subj_data_dict
     data_dict['en_orientation'] = dict_params[data_dict['en_orientation']]
-    data_dict['en_type_activity'] = dict_params[data_dict['en_type_activity']]
+    data_dict['en_type_activity'] = dict_params[data_dict['en_type_activity']] if data_dict['en_type_activity'] in dict_params.keys() else data_dict['en_type_activity']
     name = f"program {count}.docx"
     doc1 = DocxTemplate("5.docx")
     doc1.render(data_dict)
