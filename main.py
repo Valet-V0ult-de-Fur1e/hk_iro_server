@@ -4,7 +4,7 @@ app = Flask(__name__)
 count = 0
 
 
-@app.route('/test', methods=['GET', 'POST'])
+@app.route('/constructor/test', methods=['GET', 'POST'])
 def test():
     global count
     dict_person = {
@@ -927,7 +927,7 @@ def test():
     # return jsonify({})
 
 
-@app.route('/')
+@app.route('/constructor/hi')
 def home():
     return jsonify({"text": 'hi'})
 
