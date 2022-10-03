@@ -927,7 +927,7 @@ def test():
     # return jsonify({})
 
 
-@app.route('/constructor/hi')
+@app.route('/constructor')
 def home():
     return jsonify({"text": 'hi'})
 
