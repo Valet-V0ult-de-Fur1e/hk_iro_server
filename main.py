@@ -927,5 +927,10 @@ def test():
     # return jsonify({})
 
 
+@app.route('/')
+def home():
+    return jsonify({"text": 'hi'})
+
+
 if __name__ == '__main__':
     app.run()
